@@ -9,7 +9,7 @@ public class Score : MonoBehaviour
     public TMP_Text textHighScore, textCurrentScore;
 
     public HighScore highScoreScriptableObject;
-    private int currentScore = 0;
+    private long currentScore = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -40,8 +40,12 @@ public class Score : MonoBehaviour
         }
     }
 
+    public void UpdateScore(int score)
+    {
+        currentScore += score;
+    }
+
     private void FixedUpdate()
     {
-        currentScore += 50;
     }
 }

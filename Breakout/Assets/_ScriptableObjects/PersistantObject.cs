@@ -5,7 +5,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 
-public abstract class PersistantScore : ScriptableObject
+public abstract class PersistantObject : ScriptableObject
 {
     public void Save(string FileName = null)
     {
