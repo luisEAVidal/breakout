@@ -10,6 +10,7 @@ public class BricksManager : MonoBehaviour
     {
         if (transform.childCount == 0)
         {
+            Time.timeScale = 0;
             NextLevelMenu.SetActive(true);
         }
     }

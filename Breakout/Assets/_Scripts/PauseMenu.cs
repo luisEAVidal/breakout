@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject optionsMenu;
     public void ShowPauseMenu ()
     {
+        Time.timeScale = 0;
         pauseMenu.SetActive (true);
         if (optionsMenu.activeInHierarchy) { 
             optionsMenu.SetActive (false);
@@ -17,11 +18,13 @@ public class PauseMenu : MonoBehaviour
 
     public void HidePauseMenu()
     {
+        Time.timeScale = 1;
         pauseMenu.SetActive(false);
     }
 
     public void GoToMainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 
