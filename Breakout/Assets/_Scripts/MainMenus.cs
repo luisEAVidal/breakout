@@ -11,6 +11,7 @@ public class MainMenus : MonoBehaviour
 
     public void StartGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
 
