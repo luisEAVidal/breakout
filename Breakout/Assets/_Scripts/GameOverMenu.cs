@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BrickIce : Brick
+public class GameOverMenu : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        brickHealth = 3;
+        
     }
 
-    void Slide()
+    // Update is called once per frame
+    void Update()
     {
-        Debug.Log("Sliding to the side");
+        
     }
 }

@@ -1,13 +1,30 @@
- using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] public int limitX = 23;
-    [SerializeField] public float paddleSpeed = 80.0f;
+    [SerializeField] public float paddleSpeed = 50.0f;
     Vector3 mousePosition3d;
     Vector3 mousePosition2d;
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Ball") {
+            BounceBall(collision);
+        }
+    }
+
+    private void BounceBall(Collision collision)
+    {
+        Vector3 direction = collision.contacts[0].point - transform.position; //a vector from the center to the point where the ball hit
+        direction = direction.normalized;
+        collision.rigidbody.velocity = collision.gameObject.GetComponent<Ball>().ballSpeed * direction;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

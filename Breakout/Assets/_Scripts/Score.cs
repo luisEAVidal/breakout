@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
@@ -9,7 +11,7 @@ public class Score : MonoBehaviour
     public TMP_Text textHighScore, textCurrentScore;
 
     public HighScore highScoreScriptableObject;
-    private int currentScore = 0;
+    private long currentScore = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +22,18 @@ public class Score : MonoBehaviour
         textHighScore = transformHighScore.GetComponent<TMP_Text>();
         textCurrentScore = transformCurrentScore.GetComponent<TMP_Text>();
 
-        //if(PlayerPrefs.HasKey("HighScore")) {
-        //highScoreScriptableObject.highScore = PlayerPrefs.GetInt("HighScore");
-        highScoreScriptableObject.Load();
-            textHighScore.text = $"High Score: {highScoreScriptableObject.highScore}";
-        //}
+        var scoreFileName = "HighScore Level " + SceneManager.GetActiveScene().buildIndex;
+
+        try{ 
+            highScoreScriptableObject.Load(scoreFileName); 
+        }
+        catch (FileNotFoundException){
+            Debug.Log("High Score File not found, a default one will be created");
+            highScoreScriptableObject.highScore = 0;
+            highScoreScriptableObject.Save(scoreFileName);
+        }
+        Debug.Log("Starting High Score: " + highScoreScriptableObject.highScore);
+        textHighScore.text = $"High Score: {highScoreScriptableObject.highScore}";
 
     }
 
@@ -36,12 +45,15 @@ public class Score : MonoBehaviour
             highScoreScriptableObject.highScore = currentScore;
             textHighScore.text = $"High Score: {highScoreScriptableObject.highScore}";
             highScoreScriptableObject.Save();
-            //PlayerPrefs.SetInt("HighScore", highScoreScriptableObject.highScore);
         }
+    }
+
+    public void UpdateScore(int score)
+    {
+        currentScore += score;
     }
 
     private void FixedUpdate()
     {
-        currentScore += 50;
     }
 }

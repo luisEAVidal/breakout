@@ -7,7 +7,8 @@ public class BrickWood : Brick
     // Start is called before the first frame update
     void Start()
     {
-        endurance = 3;
+        brickHealth = 6;
+        hitDamange = transform.GetComponentInParent<BricksManager>().BallDamage;
     }
 
 }
