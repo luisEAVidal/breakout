@@ -5637,7 +5637,7 @@ MonoBehaviour:
   transformCurrentScore: {fileID: 0}
   textHighScore: {fileID: 0}
   textCurrentScore: {fileID: 0}
-  highScoreScriptableObject: {fileID: 11400000, guid: 7bd1fea895d2e5647a4117894bb6bdba, type: 2}
+  highScoreScriptableObject: {fileID: 11400000, guid: e25e959937496fa4cb24e63f4ac366d6, type: 2}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8563,6 +8563,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextLevelMenu: {fileID: 357531257}
+  BallDamage: 1
+  PreferencesScriptableObject: {fileID: 11400000, guid: bb60f9d3c3b2cdd4ebbb8689ee73fb2f, type: 2}
 --- !u!1001 &1383797526
 PrefabInstance:
   m_ObjectHideFlags: 0

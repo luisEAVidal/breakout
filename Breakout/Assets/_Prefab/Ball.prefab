@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballSpeed: 15
+  PreferencesScriptableObject: {fileID: 11400000, guid: bb60f9d3c3b2cdd4ebbb8689ee73fb2f, type: 2}
   DestroyedBall:
     m_PersistentCalls:
       m_Calls:

@@ -127,7 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e377759c3620f5347ab6e6ee035e3c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endurance: 1
+  brickHealth: 3
+  PreferencesScriptableObject: {fileID: 11400000, guid: bb60f9d3c3b2cdd4ebbb8689ee73fb2f, type: 2}
   IncreaseScore:
     m_PersistentCalls:
       m_Calls:

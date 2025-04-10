@@ -7,7 +7,7 @@ public class BrickIce : Brick
     // Start is called before the first frame update
     void Start()
     {
-        endurance = 3;
+        brickHealth = 3;
     }
 
     void Slide()

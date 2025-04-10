@@ -11,6 +11,7 @@ public class SpeedSlider : MonoBehaviour
     void Start()
     {
         slider = GetComponent<Slider>();
+        slider.value = preferencesScriptableObject.currentBallSpeed;
         slider.onValueChanged.AddListener(delegate { preferencesScriptableObject.UpdateSpeed(slider.value); });
     }
 

@@ -20,10 +20,12 @@ public class Preferences : PersistantObject
     public void UpdateSpeed(float speed)
     {
         currentBallSpeed = speed;
+        this.Save();
     }
 
     public void UpdateDifficulty(int difficulty) 
     { 
         currentDifficulty = (Difficulty)difficulty;
+        this.Save();
     }
 }

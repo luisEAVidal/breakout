@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.PlayerLoop;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] public float ballSpeed = 15.0f;
+    public float ballSpeed = 15.0f;
     bool gameStarted = false;
     Vector3 lastPosition = Vector3.zero;
     Vector3 direction = Vector3.zero;
     Rigidbody rigidbody;
     private BordersController bordersController;
+    public Preferences PreferencesScriptableObject;
     public UnityEvent DestroyedBall;
 
     private void Awake()
@@ -29,6 +31,21 @@ public class Ball : MonoBehaviour
         this.transform.position = initialPosition;
         this.transform.SetParent(playerGO.transform);
         rigidbody = this.GetComponent<Rigidbody>();
+
+        try
+        {
+            PreferencesScriptableObject.Load();
+            ballSpeed = PreferencesScriptableObject.currentBallSpeed;
+        }
+        catch (FileNotFoundException)
+        {
+            Debug.Log("Preferences File not found, a default one will be created");
+            PreferencesScriptableObject.currentBallSpeed = ballSpeed;
+            PreferencesScriptableObject.Save();
+        }
+
+        Debug.Log("The ball speed will be " + ballSpeed);
+
     }
 
     // Update is called once per frame

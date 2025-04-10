@@ -7734,8 +7734,8 @@ Transform:
   - {fileID: 1391340834}
   - {fileID: 1766480661}
   - {fileID: 1770092163}
-  - {fileID: 1208128497}
   - {fileID: 1522283625}
+  - {fileID: 1208128497}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7752,6 +7752,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextLevelMenu: {fileID: 357531257}
+  BallDamage: 2
+  PreferencesScriptableObject: {fileID: 11400000, guid: bb60f9d3c3b2cdd4ebbb8689ee73fb2f, type: 2}
 --- !u!1001 &1383797526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7763,6 +7765,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 2664683056208000072, guid: 390802062bb93ef45a4b63ef018289b9, type: 3}
+      propertyPath: PreferencesScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: bb60f9d3c3b2cdd4ebbb8689ee73fb2f, type: 2}
     - target: {fileID: 2664683056208000072, guid: 390802062bb93ef45a4b63ef018289b9, type: 3}
       propertyPath: DestroyedBall.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

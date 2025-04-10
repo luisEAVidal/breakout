@@ -8,10 +8,10 @@ public class NewLevelMenu : MonoBehaviour
 {
     public void AdvanceLevel()
     {
-        Time.timeScale = 1;
         var nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
         if (SceneManager.sceneCountInBuildSettings > nextLevel)
         {
+            Debug.Log("Restoring time Scale");
             SceneManager.LoadScene(nextLevel);
         }
         else
@@ -27,12 +27,10 @@ public class NewLevelMenu : MonoBehaviour
 
     public void RetryLevel()
     {
-        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void ExitGame()
     {
-        Time.timeScale = 1;
         Application.Quit();
     }
 }

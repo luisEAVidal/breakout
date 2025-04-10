@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class DifficultyDropdown : MonoBehaviour
 {
     public Preferences preferencesScriptableObject;
@@ -12,7 +13,7 @@ public class DifficultyDropdown : MonoBehaviour
     void Start()
     {
         diffculty = this.GetComponent<TMP_Dropdown>();
-        
+        diffculty.value = (int)preferencesScriptableObject.currentDifficulty;
         diffculty.onValueChanged.AddListener(delegate { preferencesScriptableObject.UpdateDifficulty(diffculty.value); });
     }
 

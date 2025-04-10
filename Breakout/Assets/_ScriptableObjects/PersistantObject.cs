@@ -15,6 +15,7 @@ public abstract class PersistantObject : ScriptableObject
 
         bf.Serialize(file, json);
         file.Close();
+        Debug.Log("file saved: " + file.Name);
     }
 
     public virtual void Load(string FileName = null)

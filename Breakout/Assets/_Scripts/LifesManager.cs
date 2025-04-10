@@ -14,6 +14,7 @@ public class LifesManager : MonoBehaviour
     private void Start()
     {
         Transform[] children = GetComponentsInChildren<Transform>();
+        Time.timeScale = 1.0f;
         foreach (Transform child in children) {
             lifes.Add(child.gameObject);
             Debug.Log($"Adding Life: {lifes.Count}");
